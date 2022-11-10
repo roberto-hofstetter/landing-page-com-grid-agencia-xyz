@@ -1,0 +1,118 @@
+.header nav ul{
+    display: flex;
+}
+
+.header nav ul li a {
+    margin-left: 30px;
+    border-radius: 50px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 10px 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.header nav ul li a:hover {
+    color: white;
+    background-color: coral;
+}
+
+.header input {
+    display: none;
+}
+
+.header .menu {
+    display: none;
+    width: 65px;
+    height: 60px;
+}
+
+.header .hamburguer {
+    background-color: #000;
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 2px;
+    top: 25px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+.header .hamburguer::before,
+.header .hamburguer::after {
+    background-color: #000;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    transition: 0.2s ease-in-out;
+}
+
+.header .hamburguer::before {
+    top: -9px;
+}
+
+.header .hamburguer::after {
+    bottom: -9px;
+}
+
+.header input:checked ~ label .hamburguer{
+    transform: rotate(45deg);
+} 
+
+.header input:checked ~ label .hamburguer::before{
+    transform: rotate(90deg);
+    top: 0;
+} 
+
+.header input:checked ~ label .hamburguer::after{
+    transform: rotate(90deg);
+    bottom: 0;
+} 
+
+
+@media (max-width: 900px) {
+    .header .menu  {
+        display: block;
+    }
+
+    .header nav ul{
+        display: none;
+    }
+
+    .header input:checked ~ ul {
+        display: block;
+    }
+
+    .header nav  {
+        position: absolute;
+        right: 0;
+        top: 8px;
+        z-index: 1;
+        background-color: #fff;
+    }
+
+    .header ul {
+        box-shadow: -3px 7px 5px 1px rgba(0, 0, 0, 0.034);
+    }
+
+    .header ul li {
+        display: block;
+        text-align: center;
+        width: 180px;
+        padding: 20px;
+    }
+    
+    .header .links a {
+        margin-left: 0px;
+    }
+    
+    .header label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header label div {
+        align-self: flex-end;
+    }
+}

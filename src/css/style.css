@@ -1,0 +1,313 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    /* 1 rem = 10px */
+}
+
+body {
+    display: grid;
+    grid-template-areas: "header header header header"
+        "hero hero hero hero"
+        "about about about about"
+        "services services services services"
+        "projects projects projects projects"
+        "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+/* HEADER */
+
+.header {
+    grid-area: header;
+}
+
+.header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    min-height: 7.5rem;
+}
+
+.header .logo {
+    font-weight: 700;
+    font-size: 2.5rem;
+    transition: 0.3s ease-in-out;
+}
+
+.header .logo:hover {
+    color: coral
+}
+
+/* HEADER */
+
+/* HERO */
+
+.hero {
+    grid-area: hero;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 89vh;
+    background: url(../images/lemons.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.hero h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 4rem;
+}
+
+.hero::after {
+    content: url(../images/seta_preta.png);
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    animation: downarrow 0.7s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes downarrow {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+
+    100% {
+        -webkit-transform: translateY(0.4em);
+        opacity: 0.4;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* HERO */
+
+
+/* ABOUT */
+
+.about {
+    display: grid;
+    grid-area: about;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2;
+    background-color: #fff;
+    max-width: var(--max-width-size);
+    margin: 0 auto;
+}
+
+.about .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 20%;
+}
+
+.about .item h3 {
+    font-weight: 600;
+    font-size: 2.2rem;
+}
+
+.about .item p {
+    margin: 25px 0;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+.about .item a {
+    align-self: flex-start;
+}
+
+.about .item .btn-know-more {
+    font-weight: 400;
+}
+
+.about .item .btn-know-more:hover {
+    font-weight: 700;
+}
+
+.about .image {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+.about .image.right {
+    background: url(../images/bridge.jpg) center center no-repeat;
+
+}
+
+.about .image.left {
+    background: url(../images/sky.jpg) center center no-repeat;
+}
+
+@media (max-width: 768px) {
+    .about .item {
+        text-align: center;
+    }
+
+    .about .item a {
+        align-self: center;
+    }
+}
+
+@media (max-width: 425px) {
+    .about {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+/* ABOUT */
+
+/* SERVICES*/
+
+.services {
+    grid-area: services;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}
+
+.services .service {
+    padding: 7rem 2rem;
+}
+
+.services .service img {
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+.services .service p {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 25px;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.services .service h3 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.services .service:nth-child(1) {
+    background: blueviolet;
+}
+
+.services .service:nth-child(2) {
+    background-color: lightpink;
+}
+
+@media (max-width: 450px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SERVICES*/
+
+
+
+/* PROJECTS */
+
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects .project img {
+    height: 100%;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+.projects .project a:hover img {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 425px) {
+    .projects {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+/* PROJECTS */
+
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    background-color: lightgreen;  
+    flex-direction: column;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.footer h4 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.footer nav {
+    margin: 50px 0;
+}
+
+.footer nav ul {
+    display: flex;
+    justify-content: center;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.footer nav ul li a {
+    margin: 20px;
+    font-weight: 500;
+    font-synthesis: 2rem;
+    transition: 0.3s ease-in-out;
+}
+
+.footer nav ul li a:hover {
+    font-weight: 700;
+    color: #fff;
+}
+
+.footer .social i {
+    font-size: 2rem;
+    transition: 0.3s;
+}
+
+.footer .social a {
+    margin: 20px;
+}
+
+.footer .social a:hover {
+    color: #fff;
+}
+
+
